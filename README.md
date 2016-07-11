@@ -15,9 +15,9 @@ hay cupos limitados.
 | 11.30-12 | G. Contreras | ggplot2 | R | RStudio | ----------- | 
 | ALMUERZO | --------- | ----- | ----------- | ------------- | ----------- | 
 
-[//]: <> ( 2 - 2.30	[J. Schellman]	Shiny	R	RStudio, HTML)		
-[//]: <> (2.45-3.15	V. Peña	Aplicaciones		d3.js, leaflet.js	Casos de uso de Visualizacion y Analytics	
+<!--- 2 - 2.30	[J. Schellman]	Shiny	R	RStudio, HTML		
+2.45-3.15	V. Peña	Aplicaciones		d3.js, leaflet.js	Casos de uso de Visualizacion y Analytics	
 3.30-4.15	N. Kawas	D3.js	Javascript	Navegador actual	Intro a D3.js	
 4.30-5	I. Donoso	D3.js	D3.js 101	Navegador actual	Interacciones	
-5.15-5.45	D. Flores	Dashboards	Javascript	DC.js, Crossfilter.js	Implementacion de dashboard	)
+5.15-5.45	D. Flores	Dashboards	Javascript	DC.js, Crossfilter.js	Implementacion de dashboard	-->
 
