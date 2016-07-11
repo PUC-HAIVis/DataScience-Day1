@@ -1,12 +1,15 @@
-## Data Science Day 1: Tools for Information Visualization
+## Data Science day 1: Tools for Information Visualization
 **Día**: Viernes 5 de Agosto de 2016 <br/>
 **Lugar**: Por confirmar
 
 Los **Data Science Day** son eventos organizados por el Departamento de Ciencia de la Computación 
 de la PUC con el propósito de difundir la Ciencia de Datos entre estudiantes interesados en el tema,
 a través de seminarios, tutoriales, hackatones u otros eventos relacionados.
+
 El evento no es exclusivo para alumnos PUC, está abierto para alumnos que cumplan los requisitos, pero
 hay cupos limitados. 
+
+El programa de este primer Data Science day es el siguiente:
 
 | Horario	| Charlista	| Tema	| Requisitos	| Herramientas	| Descripcion |
 | ------- | --------- | ----- | ----------- | ------------- | ----------- | 
