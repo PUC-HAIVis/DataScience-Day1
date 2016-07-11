@@ -1,5 +1,4 @@
-# DataScience-Day1
-## Tools for Information Visualization
+## Data Science Day 1: Tools for Information Visualization
 **Día**: Viernes 5 de Agosto de 2016
 **Lugar**: Por confirmar
 
