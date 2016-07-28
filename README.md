@@ -13,6 +13,7 @@ Haremos charlas y tutoriales introductorios de temas como
 matplotlib, ggplot2 y d3.js. El programa de este primer Data Science day es el siguiente:
 
 (Calendario actualizado el Jueves 28 de Julio)
+
 | Horario	| Charlista	| Tema	| Requisitos	| Herramientas	| Descripcion |
 | ------- | --------- | ----- | ----------- | ------------- | ----------- | 
 | 11.30-12.00 |  M. Garreton y Ricardo Vega | Introduccion | -- | -- | Charla de Introducción a la visualizacion de información | 
