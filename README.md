@@ -22,7 +22,7 @@ matplotlib, ggplot2 y d3.js. El programa de este primer Data Science day es el s
 | ALMUERZO | --------- | ----- | ----------- | ------------- | ----------- | 
 | 14.00-14.30	| G. Contreras | ggplot2 | R 101 | RStudio | ----------- | 
 | 14.30-15.00	| N. Kawas	| D3.js	101 | Programar en Javascript	| Navegador actual	| Intro a D3.js	| 
-| 15.00-15.30	| I. Donoso	| D3.js	| D3.js 101 | Navegador actual| Interacciones con D3.js	| 
+| 15.00-15.30	| [I. Donoso](https://indonoso.github.io/)	| D3.js	| D3.js 101 | Navegador actual| Interacciones con D3.js	| 
 | BREAK | --------- | ----- | ----------- | ------------- | ----------- | 
 | 15.50-16.20	| D. Flores| 	Dashboards	| Programar en Javascript	| DC.js, Crossfilter.js | Implementacion de dashboard	| 
 | 16.20-16.50	| V. Peña	| Aplicaciones| -- | leaflet.js | Casos de uso de Visualizacion y Analytics |
