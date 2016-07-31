@@ -1,18 +1,16 @@
 # Data Science day 1: Tools for Information Visualization
 **Día**: Viernes 5 de Agosto de 2016 <br/>
-**Lugar**: Edificio de Innovación, Campus San Joaquín, PUC Chile <br/>
+**Lugar**: Sala 202, Edificio de Innovación, Campus San Joaquín, PUC Chile <br/>
 **Organizan**: SocVis (Denis Parra, DCC, PUC Chile) y SCL (Diego Gomez, Facultad de Comunicaciones, PUC Chile) <br/>
 **Participan**: SocVis, SCL, Escuela de Diseño PUC, Laboratorio PRISMA DCC UChile.
 
-Los **Data Science Day** son eventos organizados por el Departamento de Ciencia de la Computación 
-de la PUC con el propósito de difundir la Ciencia de Datos entre estudiantes interesados en el tema,
-a través de seminarios, tutoriales, hackatones u otros eventos relacionados. 
+El Data Science Day 1 está dedicado a visualización y es organizado en conjunto por 
+SocVis, el SCL y el centro de Investigación de la Web Semática. 
 
-El Data Science Day 1 está dedicado a visualización y es organizado en conjunto por SocVis y por SCL. 
 Haremos charlas y tutoriales introductorios de temas como 
 matplotlib, ggplot2 y d3.js. El programa de este primer Data Science day es el siguiente:
 
-(Calendario actualizado el Jueves 28 de Julio)
+(Calendario actualizado el 31 de Julio)
 
 | Horario	| Charlista	| Tema	| Requisitos	| Herramientas	| Descripcion |
 | ------- | --------- | ----- | ----------- | ------------- | ----------- | 
@@ -31,5 +29,9 @@ matplotlib, ggplot2 y d3.js. El programa de este primer Data Science day es el s
 
 El evento no es exclusivo para alumnos PUC, está abierto para alumnos que cumplan los requisitos, pero
 hay cupos limitados. 
+
+Los **Data Science Day** son eventos organizados por el Departamento de Ciencia de la Computación 
+de la PUC con el propósito de difundir la Ciencia de Datos entre estudiantes interesados en el tema,
+a través de seminarios, tutoriales, hackatones u otros eventos relacionados. 
 
 
