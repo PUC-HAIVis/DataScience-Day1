@@ -14,7 +14,7 @@ matplotlib, ggplot2 y d3.js. El programa de este primer Data Science day es el s
 | ------- | --------- | ----- | ----------- | ------------- | ----------- | 
 | 11.30-12.00 |  M. Garreton y Ricardo Vega | Introduccion | -- | -- | Charla de Introducción a la visualizacion de información | 
 | 12.00-12.30 | V. Dominguez | MatplotLib | Programar en Python | Python3, jupyter notebook | ----------- | 
-| 12.30-13.00 | D. Parra | R 101 | nada :-) | RStudio | ----------- | 
+| 12.30-13.00 | [D. Parra](http://dparra.sitios.ing.uc.cl/) | R 101 | nada :-) | RStudio | ----------- | 
 | ALMUERZO | --------- | ----- | ----------- | ------------- | ----------- | 
 | 14.00-14.30	| G. Contreras | ggplot2 | R 101 | RStudio | ----------- | 
 | 14.30-15.00	| N. Kawas	| D3.js	101 | Programar en Javascript	| Navegador actual	| Intro a D3.js	| 
