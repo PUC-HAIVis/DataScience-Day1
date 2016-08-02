@@ -1,13 +1,11 @@
 # Data Science day 1: Tools for Information Visualization
 **Día**: Viernes 5 de Agosto de 2016 <br/>
 **Lugar**: Sala 202, Edificio de Innovación, Campus San Joaquín, PUC Chile <br/>
-**Organizan**: SocVis (Denis Parra, DCC, PUC Chile) y SCL (Diego Gomez, Facultad de Comunicaciones, PUC Chile) <br/>
+**Organizan**: SocVis (Denis Parra, DCC, PUC Chile), SCL (Diego Gomez, Facultad de Comunicaciones, PUC Chile) y CIWS (núcleo milenio de la Web Semántica) <br/>
 **Participan**: SocVis, SCL, Escuela de Diseño PUC, Laboratorio PRISMA DCC UChile.
 
 El Data Science Day 1 está dedicado a visualización y es organizado en conjunto por 
-SocVis, el SCL y el centro de Investigación de la Web Semática. 
-
-Haremos charlas y tutoriales introductorios de temas como 
+SocVis, el SCL y el CIWS. Haremos charlas y tutoriales introductorios de temas como 
 matplotlib, ggplot2 y d3.js. El programa de este primer Data Science day es el siguiente:
 
 (Calendario actualizado el 31 de Julio)
