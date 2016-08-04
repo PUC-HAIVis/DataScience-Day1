@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+
+<!-- Example based on http://bl.ocks.org/mbostock/3887118 -->
+<!-- Tooltip example from http://www.d3noob.org/2013/01/adding-tooltips-to-d3js-graph.html -->
+
+<style>
+body {
+  font: 11px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+}
+
+.dot {
+  stroke: #000;
+}
+
+.tooltip {
+  position: absolute;
+  width: 200px;
+  height: 28px;
+  pointer-events: none;
+  background-color: lightblue;
+}
+
+.selected {
+    stroke-width: 2 px;
+    stroke: #000
+}
+
+.brush .extent {
+  stroke: #fff;
+  fill-opacity: .125;
+  shape-rendering: crispEdges;
+}
+
+.dot.selected {
+  stroke-width: 10px;
+  stroke: solid #FFF;
+  fill-opacity: 1;
+}
+</style>
+<body>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="data.js"></script>
+
+<script>
+var margin = {top: 20, right: 20, bottom: 30, left: 40},
+    width = 960 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+
+// SVG Canvas
+var body = d3.select("body")
+var divVis = body.append("div")
+
+var svg = divVis.append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+// Tooltip a la página
+var tooltip = d3.select("body").append("div")
+    .attr("class", "tooltip")
+    .style("opacity", 0);
+
+//Escala para el tamaño de los círculos
+var rScale = d3.scale.linear().range([3.5, 10]);
+
+// Eje X
+var xScale = d3.scale.linear().range([0, width])
+var xAxis = d3.svg.axis().scale(xScale).orient("bottom");
+
+// Eje Y
+var yScale = d3.scale.linear().range([height, 0])
+var yAxis = d3.svg.axis().scale(yScale).orient("left");
+ 
+//Agregamos los dominios a las escalas 
+xScale.domain(d3.extent(data, function(d) { return d.x; }));
+yScale.domain(d3.extent(data, function(d) { return d.y; }));
+
+
+  // x-axis
+  svg.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis)
+    .append("text")
+      .attr("class", "label")
+      .attr("x", width)
+      .attr("y", -6) 
+      .style("text-anchor", "end")
+      .text("Axis X");
+
+  // y-axis
+  svg.append("g")
+      .attr("class", "y axis")
+      .call(yAxis)
+    .append("text")
+      .attr("class", "label")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .text("Axis Y");
+
+  // Dibujar los puntitos
+  var dots = svg.selectAll(".dot")
+      .data(data)
+    .enter().append("circle")
+      .attr("class", "dot")
+       .attr("r", function(d){return rScale(d.value)})
+      .attr("cx", function(d){return xScale(d.x)})
+      .attr("cy",function(d){return yScale(d.y)})
+      .style("fill", "blue") 
+      .on("mouseover", function(d) {
+          tooltip.transition()
+               .duration(200)
+               .style("opacity", .9);
+          tooltip.html("This is a dot at x " + d.x + " y " + d.y)
+               .style("left", (d3.event.pageX + 5) + "px")
+               .style("top", (d3.event.pageY - 28) + "px");
+      })
+      .on("mouseout", function(d) {
+          tooltip.transition()
+               .duration(500)
+               .style("opacity", 0);
+      });
+// Hacemos el brush
+
+ var brush = d3.svg.brush()
+        .x(xScale) // Le entregamos la escala sobre la que debe trabajar. Es para que entregue bien las coordenadas extent
+        .y(yScale);
+
+ var brushg = svg.append("g") //Este es el objeto del dom que representará el brush
+    .attr("class", "brush")
+    .call(brush);
+
+brush.on("brush", brushed); // Decimos que cuando ocurra un evento brush se ejecute brushed
+
+function brushed() {
+
+  var extent = brush.extent(); // Seleccionamos el extent
+  // Marcamos los puntos que están dentro de los márgenes de influencia del extent
+  search(extent[0][0], extent[0][1], extent[1][0], extent[1][1], dots); 
+    
+  // Les asignamos la clase "selected" para que queden formateados de cierta forma los puntos seleccionados
+  dots.classed("selected", function (d) {return d.selected;}); 
+}
+
+function search(x0, y0, x1, y1, dots) {
+    dots.each(function (d) {
+        if ((d.x >= x0) && (d.x < x1) && (d.y >= y0) && (d.y < y1)) {
+            d.selected = true
+        }
+    })
+}
+
+</script>
+</body>
+</html>
+
+
