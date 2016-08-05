@@ -61,13 +61,11 @@ plot
 # ylab: Nombre de la etiqueta del eje y.
 # ggtitle: Título del gráfico.
 
-
-
 # Ahora, le añadiremos estilo al gráfico.
 # Haremos que cada barra posea un color similar al del logo de Second Life, además de añadirle
 # un marco. Por otra parte, aumentaremos el ancho de nuestras barras, además de alinearlas con
 # su respectiva etiqueta.
-plot = (ggplot(data = ejemplo1, aes(x = rating))
+plot = (ggplot(data = ejemplo1, aes(x = as.numeric(rating)))
         + geom_histogram(colour = "darkslategray", fill = "darkslategray4", 
                          binwidth = 0.5)
         + scale_x_discrete(limits = c(1,5), expand = c(0.05,0.05))
@@ -88,7 +86,7 @@ plot
 
 # Ahora, en vez de tener en el eje Y la cantidad de tiendas, tendremos la densidad de tiendas.
 # Además, pondremos sobre el histograma el gráfico de la densidad.
-plot = (ggplot(data = ejemplo1, aes(x = rating, y = ..density..))
+plot = (ggplot(data = ejemplo1, aes(x = as.numeric(rating), y = ..density..))
         + geom_histogram(colour = "darkslategray", fill = "darkslategray4", 
                          binwidth = 0.5)
         + geom_density(colour = "darkturquoise")
@@ -99,12 +97,12 @@ plot = (ggplot(data = ejemplo1, aes(x = rating, y = ..density..))
 plot
 
 # Si no quisiéramos perder la frecuencia obtenida, podemos dejarla sobre cada barra.
-plot = (ggplot(data = ejemplo1, aes(x = rating, y = ..density..))
+plot = (ggplot(data = ejemplo1, aes(x = as.numeric(rating), y = ..density..))
         + geom_histogram(colour = "darkslategray", fill = "darkslategray4", 
                          binwidth = 0.5)
+        + geom_density(colour = "darkturquoise")
         + geom_text(stat = "bin", aes(label = ..count..), vjust = -1, fontface = "bold",
                     colour = "darkslategray4")
-        + geom_density(colour = "darkturquoise")
         + scale_x_discrete(limits = c(1,5), expand = c(0.05,0.05))
         + xlab("Rating")
         + ylab("Densidad de tiendas")
@@ -116,9 +114,9 @@ plot
 
 # Ahora, usaremos el segundo conjunto de datos, para poder mostrar múltiples datos a la vez.
 # Estos datos ahora contienen un año. Veremos dos formas de visualizar esto.
-plot = (ggplot(data = ejemplo2, aes(x = rating, y = ..density.., 
+plot = (ggplot(data = ejemplo2, aes(x = as.numeric(rating), y = ..density.., 
                                     fill = as.factor(year)))
-        + geom_histogram(colour = "darkslategray", binwidth = 0.5, position = "dodge")
+        + geom_histogram(colour = "darkslategray", binwidth = 0.5)
         + scale_x_discrete(limits = c(0,5), expand = c(0.05,0.05))
         + xlab("Rating")
         + ylab("Densidad de tiendas")
@@ -130,7 +128,7 @@ plot
 
 
 # Pasamos al otro método.
-plot = (ggplot(data = ejemplo2, aes(x = rating, y = ..density..))
+plot = (ggplot(data = ejemplo2, aes(x = as.numeric(rating), y = ..density..))
         + geom_histogram(colour = "darkslategray", fill = "darkslategray4", 
                          binwidth = 0.5)
         + geom_density(colour = "darkturquoise")
