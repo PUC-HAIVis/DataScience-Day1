@@ -1,0 +1,13 @@
+#table-container {
+    margin-top: 50px;
+}
+.dc-table-group {
+    display:none;
+}
+
+.chart {
+    display: inherit;
+}
+#top-title {
+    text-align: center;
+}
