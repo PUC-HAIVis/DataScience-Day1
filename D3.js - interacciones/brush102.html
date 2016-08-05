@@ -19,6 +19,7 @@ body {
 
 .dot {
   stroke: #000;
+  fill: #66c2a5;
 }
 
 .tooltip {
@@ -27,11 +28,6 @@ body {
   height: 28px;
   pointer-events: none;
   background-color: lightblue;
-}
-
-.selected {
-    stroke-width: 2 px;
-    stroke: #000
 }
 
 .brush .extent {
@@ -118,7 +114,6 @@ yScale.domain(d3.extent(data, function(d) { return d.y; }));
        .attr("r", function(d){return rScale(d.value)})
       .attr("cx", function(d){return xScale(d.x)})
       .attr("cy",function(d){return yScale(d.y)})
-      .style("fill", "blue") 
       .on("mouseover", function(d) {
           tooltip.transition()
                .duration(200)
