@@ -1,0 +1,86 @@
+R 101: Introducción basada en ejemplos
+========================================================
+author: Denis Parra, PUC Chile
+date: 5 de Agosto de 2016
+autosize: true
+transition: rotate
+
+R y CRAN
+========================================================
+
+- R es "GNU S", un lenguaje de programación y ambiente para análisis estadístico.
+<br/><br/>
+- Pueden encontrar detalles del proyecto en el sitio web de [CRAN: Comprehensive R Archive Network](https://cran.r-project.org/)
+<br/><br/>
+- Además de ser libre, tiene una activa comunidad de desarrolladores que crea/actualiza paquetes (funcionalidad extendida), algunos de ellos muy utilizados como **dplyr** y **ggplot**.
+<br/><br/>
+
+RStudio
+========================================================
+
+- La consola tradicional de R no provee mucha funcionalidad, como sería esperable para un ambiente de análisis de datos y programación científica tipo MATLAB: acceso a documentación, variables y otras estructuras en memoria, soporte para visualización, etc.
+<br/><br/>
+- La herramienta gratuita [RStudio](https://www.rstudio.com/) ha sido exitosa en suplir esta carencia.
+<br/><br/>
+- En esta clase, entonces, usaremos RStudio para seguir los ejercicios.
+<br/><br/>
+
+Caso de Estudio: SL Marketplace
+========================================================
+rtl: true
+![Second Life](./SLppt-figure/sl-sc.png)
+
+
+¡Queremos Código!
+========================================================
+
+- Paso 1: cargar archivo y explorar datos
+- Paso 2: visualizar
+- Paso 3: explorar hipótesis específicas
+- Paso 4: llevar a cabo tests, análisis más sofisticados
+
+Paso 1
+========================================================
+
+```{r}
+dfsl <- read.csv(file="sl_products_dsdpuc.csv", header = TRUE, stringsAsFactors = FALSE)
+
+str(dfsl)
+
+```
+
+Paso 2
+========================================================
+
+```{r}
+#install.packages("psych")
+library(psych)
+describe(dfsl)
+
+```
+
+Paso 3
+========================================================
+
+```{r}
+hist(dfsl[dfsl$product_category == "Scripts",c("description_polarity")], main="Sentiment Polarity of product description")
+
+```
+
+Paso 4
+========================================================
+
+```{r}
+lm1 <- lm( product_avg_rating ~ product_category + description_polarity + product_price_cat + permissions ,data=dfsl)
+
+summary(lm1)
+
+```
+
+
+Slide With Plot
+========================================================
+
+```{r, echo=FALSE}
+plot(cars)
+```
