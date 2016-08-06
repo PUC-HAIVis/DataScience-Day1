@@ -2,8 +2,8 @@
 	<head>
   		<meta charset="utf-8">
   		<title>Tutorial Leaflet</title>
-  		<link rel="stylesheet" href="static/css/leaflet.css" />
-  		<link rel="stylesheet" href="static/css/mapa.css" />
+  		<link rel="stylesheet" href="./static/css/leaflet.css" />
+  		<link rel="stylesheet" href="./static/css/mapa.css" />
   		<script src="static/js/leaflet.js"></script>
 	</head>
 	<body>
@@ -12,10 +12,10 @@
 
 			/*** AGREGAR LAYER BASE ***/
 			// Coords San Joaquín: [-33.498535, -70.615819]		
-			var map = L.map('mapid');
-			var base_layer = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-							maxZoom: 19,
-							attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+			var map = L.map('mapid').setView([-33.498535, -70.615819], 16);
+			var base_layer =  L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+			maxZoom: 19,
+			attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 			});
 			base_layer.addTo(map);
 
@@ -26,11 +26,11 @@
 
 			/*** CAMBIAR LA IMAGEN DEL MARCADOR ***/
 			/*myIcon = L.icon({
-			    iconUrl: '/static/images/icon.svg',
+			    iconUrl: './static/images/icon.svg',
 			    iconSize: [50, 50],
 			});
 			var marker = L.marker([-33.497856, -70.615263], {icon: myIcon});
-			marker.addTo(map);*/			
+			marker.addTo(map);*/
 
 			/*** AGREGAR EL CIRCULO EN EL CENTRO DE INNOVACION ***/
 			/*var innovacion_circle = L.circleMarker([-33.497856, -70.615263],{
@@ -51,43 +51,53 @@
 			polygon.addTo(map);*/
 
 			/*** AGREGAR UN CIRCULO EN LA PUC SAN JOAQUIN ***/
-			/*var sanJoaquin = L.circleMarker([-33.498535, -70.615819],{
+			var sanJoaquin = L.circleMarker([-33.498535, -70.615819],{
 				radius: 10, 
 				color: 'green',
     			fillColor: '#f03',
     			fillOpacity: 0.5
 			})
 
-			sanJoaquin.addTo(map);*/
+			sanJoaquin.addTo(map);
 
 			/*** AGREGAR POPUP AL HACER CLICK ***/
-			//sanJoaquin.bindPopup("San Joaquín").openPopup();
+			sanJoaquin.bindPopup("San Joaquín").openPopup();
 
 			/*** AGREGAR MOUSE INTERACTION ***/
-			/*sanJoaquin.on("mouseover", MouseOver); 
-			sanJoaquin.on("mouseout", MouseOut);*/
+			sanJoaquin.on("mouseover", MouseOver); 
+			sanJoaquin.on("mouseout", MouseOut);
 			
 
 			/*** DATOS DE CADA CAMPUS ***/
-			/*puc_campus = {
+			puc_campus = {
 				"Campus Oriente": [-33.446927, -70.594462],
 				"Casa central": [-33.440894, -70.640968],
 				"Campus Lo Contador": [-33.420186, -70.617939],
 				"Campus Villarica": [-39.277402, -72.225452]
-			};*/
-
-			
-			/*** FUNCIONES DE MOUSE ***/
-			/*function MouseOver(e){				
-				alert("Mouse over!");				
 			};
-			function MouseOut(){
-				alert("Mouse out!");				
-			}*/
 
 			/*** CREAR LAYER GROUP ***/
-			/*var circles_layer = L.layerGroup();
-			circles_layer.addTo(map);*/
+			var circles_layer = L.layerGroup();
+			circles_layer.addTo(map);
+			
+			/*** FUNCIONES DE MOUSE ***/
+			function MouseOver(e){				
+				for(var key in puc_campus){
+					console.log(puc_campus[key])
+					var tmp = L.circleMarker(puc_campus[key],{
+						radius: 10, 
+						color: 'green',
+		    			fillColor: '#f03',
+		    			fillOpacity: 0.5
+					})
+					tmp.addTo(circles_layer);
+				}
+			};
+			function MouseOut(){
+				circles_layer.clearLayers();			
+			}
+
+			
 
 
 		</script>		
